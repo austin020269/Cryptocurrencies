@@ -69,7 +69,10 @@ Code:
 
 Specifically for this deliverable we did the following:
 1. Continue using the crypto_clustering.ipynb file from Deliverable 3 where you have predicted the K clusters for the cryptocurrencies’ data.
-2. Create a 3D scatter plot using the Plotly Express scatter_3d() function to plot the three clusters from the clustered_df DataFrame.
+2. Create a 3D scatter plot using the Plotly Express scatter_3d() function to plot the three clusters from the clustered_df DataFrame (see below).
+
+![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli3_1.PNG)
+
 3. Add the CoinName and Algorithm columns to the hover_name and hover_data parameters, respectively, so each data point shows the CoinName and Algorithm on hover.
 4. Create a table with tradable cryptocurrencies using the hvplot.table() function (see below).
 
@@ -77,12 +80,16 @@ Specifically for this deliverable we did the following:
 
 6. Print the total number of tradable cryptocurrencies in the clustered_df DataFrame.
 7. Use the MinMaxScaler().fit_transform method to scale the TotalCoinSupply and TotalCoinsMined columns between the given range of zero and one.
-8. Create a new DataFrame using the clustered_df DataFrame index that contains the scaled data you created in Step 5.
+8. Create a new DataFrame using the clustered_df DataFrame index that contains the scaled data you created in Step 5 (see below).
+
+
+![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli3_1a.PNG)
+
 9. Add the CoinName column from the clustered_df DataFrame to the new DataFrame.
 10. Add the Class column from the clustered_df DataFrame to the new DataFrame (see below).
 
 ![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli3_1a.PNG)
 
-12. Create an hvplot scatter plot with x="TotalCoinsMined", y="TotalCoinSupply", and by="Class", showing the CoinName when you hover over the the data point (see below).
+11. Create an hvplot scatter plot with x="TotalCoinsMined", y="TotalCoinSupply", and by="Class", showing the CoinName when you hover over the the data point (see below).
 
 ![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli3_1a.PNG)
