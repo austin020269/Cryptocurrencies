@@ -33,6 +33,7 @@ Specifically for this deliverable we did the following:
 10. Use the StandardScaler fit_transform() function to standardize the features from the X DataFrame.
 
 Code:
+
 ![alt text](https://github.com/austin020269/Cryptocurrencies/blob/main/Deli1_2.PNG)
 
 ### Deliverable 2: Reducing Data Dimensions Using PCA 
