@@ -72,7 +72,7 @@ Specifically for this deliverable we did the following:
 2. Create a 3D scatter plot using the Plotly Express scatter_3d() function to plot the three clusters from the clustered_df DataFrame.
 3. Add the CoinName and Algorithm columns to the hover_name and hover_data parameters, respectively, so each data point shows the CoinName and Algorithm on hover.
 4. Create a table with tradable cryptocurrencies using the hvplot.table() function.
-5. Check the table fpr consistency (see below).
+5. Check the table for consistency (see below).
 
 ![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli3_1a.PNG)
 
