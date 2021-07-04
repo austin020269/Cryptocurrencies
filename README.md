@@ -3,7 +3,7 @@
 UT Bootcamp Module 18 Challenge
 
 ## Project Overview
-Use unsupervised machine learning methodology to investigate a dataset of different cryptocurrencies and develop trends to deliver investment possibilities to Martha's firm, Accountability Accounting.  During this process, we learned how to cluster, transform and process data using PCA.
+Use unsupervised machine learning methodology to investigate a dataset of different cryptocurrencies and develop trends to deliver an investment portfolio to Martha's firm, Accountability Accounting.  During this process, we learned how to cluster, transform and process data by reducing data dimensions and principal companents using PCA.
 
 ## Resources
 Data Sources provided to analyze and minipulate included:
@@ -14,115 +14,77 @@ Software utilized for this study included:
 - Pandas
 - Personal GitHub account
 
-## Analysis and Workflow
+## Analysis/Workflow/Results
+
 ### Deliverable 1: Preprocessing the Data for PCA
 
 Specifically for this deliverable we did the following:
-1. Create the training variables by converting the string values into numerical ones using the get_dummies() method.
-2. Create the target variables.
-3. Check the balance of the target variables.
-4. Use the LogisticRegression classifier to make predictions and evaluate the model’s performance.
-5. Calculate the accuracy score of the model.
-6. Generate a confusion matrix.
-7. Print out the imbalanced classification report (see below).
+1. Read in the crypto_data.csv to the Pandas DataFrame named crypto_df.
+2. Keep all the cryptocurrencies that are being traded.
+3. Drop the IsTrading column.
+4. Remove rows that have at least one null value.
+5. Filter the crypto_df DataFrame so it only has rows where coins have been mined.
+6. Create a new DataFrame that holds only the cryptocurrency names, and use the crypto_df DataFrame index as the index for this new DataFrame.
+7. Remove the CoinName column from the crypto_df DataFrame since it's not going to be used on the clustering algorithm.
+8. Check DataFrame for consistency (see below).
 
-Naive Random Oversampling:
-![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli1_1a.PNG)
-
-![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli1_1.PNG)
-- Accuracy Score: 67.2%
-- Precision High Risk: 1%
-- Precision Low Risk: 100%
-- Recall High Risk: 69%
-- Recall Low Risk: 65%
-
-SMOTE Oversampling:
 ![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli1_2a.PNG)
 
-![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli1_2.PNG)
-- Accuracy Score: 67.1%
-- Precision High Risk: 1%
-- Precision Low Risk: 100%
-- Recall High Risk: 70%
-- Recall Low Risk: 64%
+9. Use the get_dummies() method to create variables for the two text features, Algorithm and ProofType, and store the resulting data in a new DataFrame named X.
+10. Use the StandardScaler fit_transform() function to standardize the features from the X DataFrame.
 
+Code:
+![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli1_2a.PNG)
 
-Undersampling:
-![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli1_3a.PNG)
-
-![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli1_3.PNG)
-- Accuracy Score: 51.7%
-- Precision High Risk: 0%
-- Precision Low Risk: 100%
-- Recall High Risk: 59%
-- Recall Low Risk: 44%
-
-
-### Deliverable 2: Use the SMOTEENN algorithm to Predict Credit Risk
+### Deliverable 2: Reducing Data Dimensions Using PCA 
 
 Specifically for this deliverable we did the following:
-1. Use the credit_risk_resampling.ipynb file to create your training and target variables.
-2. Resample the training data using the SMOTEENN algorithm.
-3. Use the LogisticRegression classifier to make predictions and evaluate the model’s performance.
-4. Calculate the accuracy score of the model.
-6. Generate a confusion matrix.
-7. Print out the imbalanced classification report (see below).
+1. Continue using the crypto_clustering.ipynb file from Deliverable 1 where you’ve already performed the preprocessing steps.
+2. Using the information we’ve provided, apply PCA to reduce the dimensions to three principal components.
+3. Create a new DataFrame named pcs_df that includes the following columns, PC 1, PC 2, and PC 3, and uses the index of the crypto_df DataFrame as the index.
+4. Check your DataFrame for consistency (see below).
 
-SMOTEEN - Combination (Over and Under) Sampling:
 ![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli2_1a.PNG)
 
+Code:
 ![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli2_1.PNG)
-- Accuracy Score: 68.1%
-- Precision High Risk: 1%
-- Precision Low Risk: 100%
-- Recall High Risk: 76%
-- Recall Low Risk: 60%
 
+### Deliverable 3: Clustering Cryptocurrencies Using K-means
 
-### Deliverable 3: Use Ensemble Classifiers to Predict Credit Risk
 Specifically for this deliverable we did the following:
-1. Create the training variables by converting the string values into numerical ones using the get_dummies() method.
-2. Create the target variables.
-3. Check the balance of the target variables.
-4. Resample the training data using the BalancedRandomForestClassifier algorithm with 100 estimators.
-5. Calculate the accuracy score of the model
-6. Generate a confusion matrix
-7. Print out the imbalanced classification report (see below).
+1. Continue using the crypto_clustering.ipynb file that you used in Deliverable 2 to reduce the dataset to three dimensions.
+2. Using the pcs_df DataFrame, create an elbow curve using hvPlot to find the best value for K.
+3. Use the pcs_df DataFrame to run the K-means algorithm to make predictions of the K clusters for the cryptocurrencies’ data.
+4. Create a new DataFrame named clustered_df by concatenating the crypto_df and pcs_df DataFrames on the same columns. The index should be the same as the crypto_df DataFrame.
+5. Add the CoinName column that holds the names of the cryptocurrencies, which you created in Step 7 of Deliverable 1, to the clustered_df.
+6. Add another new column to the clustered_df named Class that holds the predictions, i.e., model.labels_, from Step 3.
+7. Check your DataFrame for consistency (see below).
 
-Balanced Random Forest Classifier:
 ![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli3_1a.PNG)
 
+Code:
 ![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli3_1.PNG)
-- Accuracy Score: 64.8%
-- Precision High Risk: 56%
-- Precision Low Risk: 100%
-- Recall High Risk: 30%
-- Recall Low Risk: 100%
 
-9. Print the feature importance sorted in descending order (from most to least important feature), along with the feature score.
-10. Resample the training data using the EasyEnsembleClassifier algorithm with 100 estimators.
-11. Calculate the accuracy score of the model
-12. Generate a confusion matrix
-13. Print out the imbalanced classification report (see below).
+### Deliverable 4: Visualizing Cryptocurrencies Results
 
-Easy Ensemble Classifier:
-![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli3_2a.PNG)
+Specifically for this deliverable we did the following:
+1. Continue using the crypto_clustering.ipynb file from Deliverable 3 where you have predicted the K clusters for the cryptocurrencies’ data.
+2. Create a 3D scatter plot using the Plotly Express scatter_3d() function to plot the three clusters from the clustered_df DataFrame.
+3. Add the CoinName and Algorithm columns to the hover_name and hover_data parameters, respectively, so each data point shows the CoinName and Algorithm on hover.
+4. Create a table with tradable cryptocurrencies using the hvplot.table() function.
+5. Check the table fpr consistency (see below).
 
-![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli3_2.PNG)
-- Accuracy Score: 92.3%
-- Precision High Risk: 6%
-- Precision Low Risk: 1%
-- Recall High Risk: 91%
-- Recall Low Risk: 94%
+![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli3_1a.PNG)
 
-### Deliverable 4: Written Report on the Credit Risk Analysis
-Whether a model can predict if a loan is high risk or not would be determined by the value of it's high risk recall rate.  The higher the rate, the fewer high risk loans that are approved.  Our top three performing models for this statistic are :
-1. Easy Ensamble Classifying (91%)
-2. SMOTEENN Sampling (76%)
-3. SMOTE Oversampling (70%)
+6. Print the total number of tradable cryptocurrencies in the clustered_df DataFrame.
+7. Use the MinMaxScaler().fit_transform method to scale the TotalCoinSupply and TotalCoinsMined columns between the given range of zero and one.
+8. Create a new DataFrame using the clustered_df DataFrame index that contains the scaled data you created in Step 5.
+9. Add the CoinName column from the clustered_df DataFrame to the new DataFrame.
+10. Add the Class column from the clustered_df DataFrame to the new DataFrame.
+11. Check DataFrame for consistency (see below).
 
-Additionally, another import feature of our models is it's accuracy, reflecting it's dependability in reference to the true or accepted value.  The top three for this statistic are:
-1. Easy Ensemble Classifying (92.3%)
-2. SMOTEENN Sampling (68.1%)
-3. Naive Random Oversampling (67.2%)
+![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli3_1a.PNG)
 
+12. Create an hvplot scatter plot with x="TotalCoinsMined", y="TotalCoinSupply", and by="Class", showing the CoinName when you hover over the the data point (see below).
+
+![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli3_1a.PNG)
