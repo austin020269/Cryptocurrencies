@@ -7,12 +7,11 @@ To unsupervised machine learning to investigate a dataset of different cryptocur
 
 ## Resources
 Data Sources provided to analyze and minipulate included:
-- LoanStats_2019Q1.csv
+- crypto_data.csv
 
 Software utilized for this study included: 
 - Python 3.7.6 
-- Conda 4.9.2
-- Pandas 
+- Conda 4.9.2 
 - Jupyter Notebook 6.1.4
 - Personal GitHub account
 
