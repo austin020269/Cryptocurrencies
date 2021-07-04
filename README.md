@@ -3,7 +3,7 @@
 UT Bootcamp Module 18 Challenge
 
 ## Project Overview
-Use unsupervised machine learning methodology to investigate a dataset of different cryptocurrencies and develop trends to deliver investment possibilities to Martha's firm, Accountability Accounting.  During this process, we learned how to cluster, transform and process data as well as reduce its dimensions and compenents using PCA.
+Use unsupervised machine learning methodology to investigate a dataset of different cryptocurrencies and develop trends to deliver investment possibilities to Martha's firm, Accountability Accounting.  During this process, we learned how to cluster, transform and process data using PCA.
 
 ## Resources
 Data Sources provided to analyze and minipulate included:
@@ -11,18 +11,11 @@ Data Sources provided to analyze and minipulate included:
 
 Software utilized for this study included: 
 - Python 3.7.6 
-- Conda 4.9.2 
-- Jupyter Notebook 6.1.4
+- Pandas
 - Personal GitHub account
 
 ## Analysis and Workflow
-The general workflow in running these models are to :
-1. Read and clean the data
-2. Split the data into training and testing
-3. Resample the data according to the algorithm method (SMOTE, Naive Random, Undersampling, etc.)
-4. Run the confusion matrix and show statistical results
-
-### Deliverable 1: Resampling Models to Predict Credit Risk
+### Deliverable 1: Preprocessing the Data for PCA
 
 Specifically for this deliverable we did the following:
 1. Create the training variables by converting the string values into numerical ones using the get_dummies() method.
