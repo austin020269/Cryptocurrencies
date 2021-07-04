@@ -66,7 +66,7 @@ Specifically for this deliverable we did the following:
 1. Continue using the crypto_clustering.ipynb file from Deliverable 3 where you have predicted the K clusters for the cryptocurrencies’ data.
 2. Create a 3D scatter plot using the Plotly Express scatter_3d() function to plot the three clusters from the clustered_df DataFrame (see below).
 
-![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli4_1.PNG)
+![alt text](https://github.com/austin020269/Cryptocurrencies/blob/main/Deli4_1.PNG)
 
 3. Add the CoinName and Algorithm columns to the hover_name and hover_data parameters, respectively, so each data point shows the CoinName and Algorithm on hover.
 4. Create a table with tradable cryptocurrencies using the hvplot.table() function (see below).
@@ -76,8 +76,8 @@ Specifically for this deliverable we did the following:
 8. Add the CoinName column from the clustered_df DataFrame to the new DataFrame.
 9. Add the Class column from the clustered_df DataFrame to the new DataFrame (see below).
 
-![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli4_2.PNG)
+![alt text](https://github.com/austin020269/Cryptocurrencies/blob/main/Deli4_2.PNG)
 
 10. Create an hvplot scatter plot with x="TotalCoinsMined", y="TotalCoinSupply", and by="Class", showing the CoinName when you hover over the the data point (see below).
 
-![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli4_3.PNG)
+![alt text](https://github.com/austin020269/Cryptocurrencies/blob/main/Deli4_3.PNG)
