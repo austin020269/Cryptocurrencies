@@ -11,7 +11,8 @@ Data Sources provided to analyze and minipulate included:
 
 Software utilized for this study included: 
 - Python 3.7.6 
-- Conda 4.9.2 
+- Conda 4.9.2
+- Pandas 
 - Jupyter Notebook 6.1.4
 - Personal GitHub account
 
