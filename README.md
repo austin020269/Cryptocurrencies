@@ -3,12 +3,7 @@
 UT Bootcamp Module 18 Challenge
 
 ## Project Overview
-Create a machine learning model and analysis using different sampling techniques and the imbalanced-learn and scikit-learn libraries on the credit risk dataset from LendingClub by:
-1. Oversampling the data using the RandomOverSampler and SMOTE algorithms
-2. Undersampling the data using the ClusterCentroids algorithm
-3. Oversampling and undersampling the data using the SMOTEEN algorithm
-4. Comparing the two models that reduce bias to predice risk: BalancedRandomForestClassifier and EasyEnsembleClassifier
-5. Evaluate the performance of the models and their efficiency in predicting risk 
+To unsupervised machine learning to investigate a dataset of different cryptocurrencies and develop trends to deliver investment possibilities to Martha's firm, Accountability Accounting.  During this process, we learned how to cluster, transform and process data as well as reduce its dimensions and compenents using PCA.
 
 ## Resources
 Data Sources provided to analyze and minipulate included:
