@@ -3,7 +3,7 @@
 UT Bootcamp Module 18 Challenge
 
 ## Project Overview
-To unsupervised machine learning to investigate a dataset of different cryptocurrencies and develop trends to deliver investment possibilities to Martha's firm, Accountability Accounting.  During this process, we learned how to cluster, transform and process data as well as reduce its dimensions and compenents using PCA.
+Use unsupervised machine learning methodology to investigate a dataset of different cryptocurrencies and develop trends to deliver investment possibilities to Martha's firm, Accountability Accounting.  During this process, we learned how to cluster, transform and process data as well as reduce its dimensions and compenents using PCA.
 
 ## Resources
 Data Sources provided to analyze and minipulate included:
