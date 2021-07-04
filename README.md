@@ -51,7 +51,9 @@ Code:
 
 Specifically for this deliverable we did the following:
 1. Continue using the crypto_clustering.ipynb file that you used in Deliverable 2 to reduce the dataset to three dimensions.
-2. Using the pcs_df DataFrame, create an elbow curve using hvPlot to find the best value for K.
+2. Using the pcs_df DataFrame, create an elbow curve using hvPlot to find the best value for K (see below).
+
+![alt text](https://github.com/austin020269/Credit_Risk_Analysis/blob/main/Deli2_1.PNG)
 3. Use the pcs_df DataFrame to run the K-means algorithm to make predictions of the K clusters for the cryptocurrencies’ data.
 4. Create a new DataFrame named clustered_df by concatenating the crypto_df and pcs_df DataFrames on the same columns. The index should be the same as the crypto_df DataFrame.
 5. Add the CoinName column that holds the names of the cryptocurrencies, which you created in Step 7 of Deliverable 1, to the clustered_df.
